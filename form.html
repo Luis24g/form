@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="icon" href="images/icon.ico" type="image/icon" title="VV">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap');
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Red Hat Mono', monospace;
+        }
+        body{
+            display:flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center; 
+            background:linear-gradient(800deg,#71b7e6,#9b59b6);
+        }
+        .container{
+            max-width: 700px;
+            width: 100%;
+            background: #fff;
+            border-radius: 5px; 
+            padding: 25px 30px ;
+        }
+        .container .title{
+            font-size: 25px;
+            font-weight:500;
+            position:relative;
+        }
+        .container .title::before{
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 30px;
+            bottom:0;
+            left:0;
+            background: linear-gradient(100deg,#71b7e6,#9b59b6); 
+        }
+        /* .container .division{
+            
+            left:0;
+            bottom:0;
+            height: 1px;
+            width:85%;
+            background: linear-gradient(100deg,#71b7e6,#9b59b6); 
+            padding: 1px 50px 1px 0px;
+            margin-bottom:5px;
+        } */
+        .container form .user-details{
+               display:flex;
+               flex-wrap: wrap;
+               justify-content: space-between;
+               margin: 20px 0px 12px 0px;
+        }
+        form .user-details .input-box{
+            width:calc(100% / 2 - 20px);
+            margin-bottom: 15px;
+        }
+        .user-details .input-box input{
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 15px;
+            font-size: 15px;
+            border-width: 1px 2px 2px 1px;
+            
+        }
+        .user-details .input-box .details{
+            display:block;
+            font-weight: 600;
+            margin-bottom: 5px;            
+      }
+      .user-details .input-box input:focus,
+      .user-details .input-box input:valid{
+          border-color:#9b59b6;
+          transition: all 0.5s ease;
+      }
+      form .gender-details .gender-title{
+          font-size: 25px;
+          font-weight:500;
+      }
+      form .gender-details .category{
+          display:flex;
+          width:80%;
+          justify-content:space-around;
+          margin: 14px 0;
+      }
+      .gender-details .category label{
+          display:flex;
+          align-items: center;
+      }
+      .gender-details .category .dot{
+          background: #d9d9d9;
+          height: 18px;
+          width: 18px;
+          border-radius:50%;
+          margin-right: 5px;
+          border: 5px solid transparent;
+          transition: all 0.3s ease;
+      }
+      #dot-one:checked ~ .category label .one,
+      #dot-two:checked ~ .category label .two,
+      #dot-three:checked ~ .category label .three{       
+          border-color: #d9d9d9;
+          background:#9b59b6;
+      }
+      form input[type="radio"]{
+          display: none;
+      }
+      form .button{
+          height: 40px;
+          margin: 30px 0;
+         
+      }
+      form .button input{
+          height: 100%;
+          width: 100%;
+          outline: none;
+          color: #fff;
+          font-size: 20px;
+          font-weight: 500;
+          letter-spacing:1px;
+          border-radius: 5px;
+          text-transform: uppercase;
+          transition: 0.5s;
+          /* Aqui esta el cambio: */
+          background-size: 200% auto;
+          box-shadow: 0 0 20px #eee;
+          background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+         
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+
+  
+ 
+      }
+      form .button input:hover{
+          /* background: linear-gradient(-100deg,#71b7e6,#9b59b6); */
+          background-position: right center;
+         
+          
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registration</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">User Name</span>
+                    <input type="text" placeholder="Enter your username" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" placeholder="Choose Password" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="password" placeholder="Confirm your password" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" placeholder="Enter your e-mail" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">phone</span>
+                    <input type="text" placeholder="Enter your phone number" required>
+                </div>
+            </div>
+            <div class="gender-details">
+                <input type="radio" name="gender" id="dot-one">
+                <input type="radio" name="gender" id="dot-two">
+                <input type="radio" name="gender" id="dot-three">
+                <span class="gender-title">Gender</span>
+                <div class="category">
+                    <label for="dot-one">
+                        <span class="dot one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-two">
+                        <span class="dot two"></span>
+                        <span class="gender">Female</span>
+                    </label>
+                    <label for="dot-three">
+                        <span class="dot three"></span>
+                        <span class="gender">Other</span>
+                    </label>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
